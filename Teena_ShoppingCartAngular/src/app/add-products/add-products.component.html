@@ -1,0 +1,33 @@
+
+ <div>
+    <button (click)="goAdminDashboard()" class="btn btn-success" id="dashboard">Goto Dashboard</button>
+    <div>
+  <form [formGroup]="productDetail" (ngSubmit)="addProducts()" class="form-horizontal">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="price">Product Price</label>
+        <input type="text" class="form-control" name="price" formControlName="price" id="form" placeholder="Price"
+          required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="name">Product Name</label>
+      <input type="text" class="form-control" name="name" formControlName="name" placeholder="Name" required>
+    </div>
+    <div class="mb-3">
+      <label>Select an Image:</label>
+      <input type="file" name="image_file" formControlName="image_file" (change)="img($event)" required>
+    </div>
+    <div class="mb-3">
+      <label for="category">Category</label>
+    </div>
+    <select name="category" formControlName="category">
+      <option value="">Select</option>
+      <option value="Fruits">Fruits</option>
+      <option value="Beauty">Beauty</option>
+      <option value="Home Decor">Home Decor</option>
+      <option value="Beverage">Beverage</option>
+    </select>
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="!productDetail.valid">ADD</button>
+  </form>

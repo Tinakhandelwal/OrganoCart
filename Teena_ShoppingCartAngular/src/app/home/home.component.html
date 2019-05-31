@@ -1,0 +1,31 @@
+<div class = "main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img class="img-responsive" src="../../assets/img2.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+              <h3>Categories:</h3>
+              <div *ngFor="let category of categories">
+                <a href="">{{category.categoryName}}</a>
+                <hr>
+              </div>
+            </div>
+            <div class="col-sm-9">
+                <div *ngFor="let el of products" class = "col-sm-6 col-sm-4">
+                    <div class = "img-thumbnail">
+                  <div><img src="http://localhost:8000/my_images/{{el.image_file}}" height="200px" width="250px"></div>
+                  <div>{{el.name}}</div>
+                  <div>Price: {{el.price}}
+                  <a href ="" class="btn btn-primary" role="button">Buy</a></div>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
